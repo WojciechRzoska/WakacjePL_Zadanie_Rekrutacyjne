@@ -15,6 +15,11 @@ export const AboutContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   height: 250px;
   width: 250px;
 `;

@@ -17,13 +17,13 @@ export const BreedItem = ({ item }: BreedItemProps) => {
     fetchImage(item);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item]);
-
+  const formatedName = item.charAt(0).toUpperCase() + item.slice(1);
   return (
-    <Wrapper to={`/search/${item}`}>
+    <Wrapper to={`/search/${formatedName}`}>
       <ImageContainer>
         <StyledImage src={imageSrc} alt={`${item} breed`} />
       </ImageContainer>
-      <BreedNameContainer>{item}</BreedNameContainer>
+      <BreedNameContainer>{formatedName}</BreedNameContainer>
     </Wrapper>
   );
 };

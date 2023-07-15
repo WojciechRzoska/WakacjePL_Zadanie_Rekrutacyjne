@@ -14,7 +14,7 @@ export const Search = () => {
 
   useEffect(() => {
     if (id) {
-      fetchImage(id);
+      fetchImage(id.toLowerCase());
     }
   }, []);
 
@@ -31,7 +31,7 @@ export const Search = () => {
     <ViewWrapper>
       <SearchForm item={id || ''} handleSearch={handleSearch} />
       {searchBreed || id ? (
-        <About image={imageSrc} notFound={notFound} />
+        <About image={imageSrc} notFound={notFound} name={searchBreed || id} />
       ) : null}
     </ViewWrapper>
   );

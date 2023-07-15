@@ -9,17 +9,22 @@ import { NotFound } from '../../molecues/NotFound/NotFound';
 
 interface AboutProps {
   image: string;
-  notFound: boolean;
+  notFound: boolean | undefined;
+  name: string | undefined;
 }
-export const About = ({ image, notFound }: AboutProps) => {
+
+export const About = ({ image, notFound, name }: AboutProps) => {
   return (
     <>
-      {image || notFound ? (
+      {notFound !== undefined ? (
         <AboutContainer>
-          {!notFound ? (
+          {notFound ? (
+            <NotFound />
+          ) : (
             <>
               <ImageContainer>
                 <StyledRoundedImage src={image} alt="dog" />
+                <p>{name && name.charAt(0).toUpperCase() + name.slice(1)}</p>
               </ImageContainer>
               <DetailsContainer>
                 <p>
@@ -38,8 +43,6 @@ export const About = ({ image, notFound }: AboutProps) => {
                 </p>
               </DetailsContainer>
             </>
-          ) : (
-            <NotFound />
           )}
         </AboutContainer>
       ) : null}

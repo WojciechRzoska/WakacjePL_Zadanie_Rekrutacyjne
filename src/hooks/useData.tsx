@@ -6,7 +6,7 @@ export const DataProvider = () => {
   const [breeds, setBreeds] = useState<string[]>([]);
   const [loadedBreeds, setLoadedBreeds] = useState<string[]>([]);
   const [imageSrc, setImageSrc] = useState<string>('');
-  const [notFound, setNotFound] = useState<boolean>(false);
+  const [notFound, setNotFound] = useState<boolean | undefined>(undefined);
 
   // funkcja asychnorniczna do pobrania danych aby pobieranie danych nie stopowało renderowania strony
   const fetchData = async () => {
