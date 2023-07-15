@@ -20,11 +20,7 @@ export const DataProvider = () => {
   };
 
   useEffect(() => {
-    if (breeds.length === 0) fetchData();
-  }, [breeds.length]);
-
-  useEffect(() => {
-    setLoadedBreeds(breeds.slice(0, 10));
+    if (breeds.length !== 0) setLoadedBreeds(breeds.slice(0, 10));
   }, [breeds]);
 
   const handleLoadData = () => {

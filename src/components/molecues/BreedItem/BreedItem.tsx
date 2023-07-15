@@ -19,7 +19,7 @@ export const BreedItem = ({ item }: BreedItemProps) => {
   }, [item]);
 
   return (
-    <Wrapper to="/search" state={{ breedName: item }}>
+    <Wrapper to={`/search/${item}`}>
       <ImageContainer>
         <StyledImage src={imageSrc} alt={`${item} breed`} />
       </ImageContainer>

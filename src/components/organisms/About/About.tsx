@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-import React, { useEffect } from 'react';
 import {
   AboutContainer,
   DetailsContainer,
@@ -13,9 +12,6 @@ interface AboutProps {
   notFound: boolean;
 }
 export const About = ({ image, notFound }: AboutProps) => {
-  useEffect(() => {
-    console.log(notFound);
-  });
   return (
     <>
       {image || notFound ? (

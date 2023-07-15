@@ -52,3 +52,8 @@ export const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.white};
   }
 `;
+export const StyledNavLinkLogo = styled(NavLink)`
+  text-decoration: none;
+  font-size: 2rem;
+  color: ${({ theme }) => theme.colors.black};
+`;

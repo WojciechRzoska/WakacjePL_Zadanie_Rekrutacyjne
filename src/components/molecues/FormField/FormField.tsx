@@ -1,20 +1,28 @@
-import { forwardRef, InputHTMLAttributes, Ref } from 'react';
+import { forwardRef, InputHTMLAttributes } from 'react';
+import { FieldErrors } from 'react-hook-form';
 import { Label } from '../../atoms/Label/Label';
-import { Input } from '../../atoms/Input/Input';
 import { Wrapper } from './FormField.style';
+import Input from '../../atoms/Input/Input';
+import { Inputs } from '../../organisms/SearchForm/SearchForm';
 
-interface FormFieldProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface FormFieldProps
+  extends InputHTMLAttributes<HTMLInputElement>,
+    Partial<DefaultProps> {
   id: string;
   name: string;
   placeholder: string;
-  label: string;
   type: string;
+}
+
+interface DefaultProps {
+  isError?: FieldErrors<Inputs>;
+  label?: string;
 }
 
 type FormFieldElement = HTMLInputElement & FormFieldProps;
 
 const FormField = forwardRef<FormFieldElement, FormFieldProps>(
-  ({ id, name, placeholder, label, value, type, ...props }, ref) => {
+  ({ id, name, placeholder, label, value, type, isError, ...props }, ref) => {
     return (
       <Wrapper>
         <Label htmlFor={id}>{label}</Label>
@@ -24,6 +32,7 @@ const FormField = forwardRef<FormFieldElement, FormFieldProps>(
           type={type}
           placeholder={placeholder}
           ref={ref}
+          isError={isError}
           {...props}
         />
       </Wrapper>

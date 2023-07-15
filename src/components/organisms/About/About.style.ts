@@ -7,7 +7,11 @@ export const AboutContainer = styled.div`
   flex-direction: column;
   gap: 50px;
   margin-top: 50px;
-  width: 50%;
+  width: 80%;
+
+  @media (min-width: 57em) {
+    width: 50%;
+  }
 `;
 
 export const ImageContainer = styled.div`

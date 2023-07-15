@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 export const FormContainer = styled.form`
-  width: 100%;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: 30px;
+
+  @media (min-width: 57em) {
+    flex-direction: row;
+    margin-top: 0;
+  }
 `;
 
 export const SubmitButton = styled.button`
@@ -25,4 +31,8 @@ export const SubmitButton = styled.button`
     color: black;
     transition: background-color 300ms ease, color 300ms ease;
   }
+`;
+export const ErrorMessage = styled.span`
+  font-size: 1.4rem;
+  color: ${({ theme }) => theme.colors.red};
 `;

@@ -1,10 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { useEffect } from 'react';
 import { BreedItem } from '../../molecues/BreedItem/BreedItem';
 import { Wrapper } from './BreedList.style';
 import { DataProvider } from '../../../hooks/useData';
 
 export const BreedList = () => {
-  const { loadedBreeds, handleLoadData, breeds } = DataProvider();
+  const { fetchData, loadedBreeds, handleLoadData, breeds } = DataProvider();
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <Wrapper>

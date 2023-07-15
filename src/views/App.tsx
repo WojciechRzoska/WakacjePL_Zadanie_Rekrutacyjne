@@ -12,7 +12,7 @@ export const App = () => {
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
         <Route path="/search" element={<Search />}>
-          {/* <Route path=":id" element={<Search />} /> */}
+          <Route path=":id" element={<Search />} />
         </Route>
       </Routes>
     </MainTemplate>
